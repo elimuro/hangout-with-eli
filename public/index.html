@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hang out with eli</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Entry Screen -->
+  <div id="entry-screen">
+    <div class="entry-inner">
+      <p class="entry-label">you are entering</p>
+      <h1 class="entry-title">hang out<br>with eli</h1>
+      <form id="entry-form">
+        <input
+          id="username-input"
+          type="text"
+          placeholder="your name"
+          maxlength="20"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button type="submit">enter the room</button>
+      </form>
+    </div>
+    <div class="entry-noise"></div>
+  </div>
+
+  <!-- Room Screen -->
+  <div id="room-screen" class="hidden">
+
+    <!-- Cursor overlay -->
+    <div id="cursor-layer"></div>
+
+    <!-- Floating reactions -->
+    <div id="reaction-stage"></div>
+
+    <!-- Presence bar -->
+    <div id="presence-bar">
+      <span class="presence-label">in the room</span>
+      <div id="presence-list"></div>
+    </div>
+
+    <!-- Messages -->
+    <div id="messages-area">
+      <div id="messages-list"></div>
+    </div>
+
+    <!-- Input bar -->
+    <div id="input-bar">
+      <div id="reaction-picker">
+        <button class="reaction-btn" data-emoji="✦">✦</button>
+        <button class="reaction-btn" data-emoji="♡">♡</button>
+        <button class="reaction-btn" data-emoji="☻">☻</button>
+        <button class="reaction-btn" data-emoji="✌">✌</button>
+        <button class="reaction-btn" data-emoji="☁">☁</button>
+        <button class="reaction-btn" data-emoji="✿">✿</button>
+      </div>
+      <form id="message-form">
+        <input
+          id="message-input"
+          type="text"
+          placeholder="say something..."
+          maxlength="280"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button type="submit">send</button>
+      </form>
+    </div>
+
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
